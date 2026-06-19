@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def concetar():
+def conectar():
     return mysql.connector.connect(
         host=os.getenv("DB_HOST"),
         user=os.getenv("DB_USER"),
@@ -13,7 +13,7 @@ def concetar():
         database=os.getenv("DB_DATABASE"),
     )
 
-conexão = concetar()
+conexão = conectar()
 online = conexão.is_connected()
 if not online:
     print("Banco de dados não conectou!")
